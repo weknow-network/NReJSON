@@ -8,7 +8,7 @@ namespace NReJSON
     {
         private static string[] CombineArguments(params object[] args)
         {
-            IEnumerable<string> _combineArguments(object[] _args)
+            IEnumerable<string> ArgumentCombiner()
             {
                 if (args == null)
                 {
@@ -21,24 +21,47 @@ namespace NReJSON
                     {
                         foreach (var aa in (RedisKey[])arg)
                         {
-                            yield return aa.ToString();
+                            if (TryGetValidString(aa, out var result))
+                            {
+                                yield return result;
+                            }
                         }
                     }
                     else if (arg.GetType().IsArray)
                     {
                         foreach (var aa in (object[])arg)
                         {
-                            yield return aa.ToString();
+                            if (TryGetValidString(aa, out var result))
+                            {
+                                yield return result;
+                            }
                         }
                     }
                     else
                     {
-                        yield return arg.ToString();
+                        if (TryGetValidString(arg, out var result))
+                        {
+                            yield return result;
+                        }
                     }
                 }
             }
 
-            return _combineArguments(args).Where(a => a.Length > 0).ToArray();
+            return ArgumentCombiner().ToArray();
+        }
+
+        private static bool TryGetValidString(RedisKey key, out string result)
+        {
+            result = key.ToString();
+
+            return result.Length > 0;
+        }
+
+        private static bool TryGetValidString(object arg, out string result)
+        {
+            result = arg.ToString();
+
+            return result.Length > 0;
         }
 
         private static string[] PathsOrDefault(string[] paths, string[] @default) =>
@@ -59,11 +82,13 @@ namespace NReJSON
             }
         }
 
+        private static readonly string[] EmptyIndexSpecification = new string[1] {string.Empty};
+
         private static string[] ResolveIndexSpecification(string index)
         {
             if (string.IsNullOrEmpty(index))
             {
-                return new[] { string.Empty };
+                return EmptyIndexSpecification;
             }
             else
             {
