@@ -510,32 +510,5 @@ namespace NReJSON.IntegrationTests
                 Assert.Equal("Joan", result[$"{key}_2"].First().LastName);
             }
         }
-
-        public class JsonToggle : BaseIntegrationTest
-        {
-            [Fact]
-            public void CanExecute()
-            {
-                var key = Guid.NewGuid().ToString();
-
-                _db.JsonSet(key, "{\"foo\":true}");
-
-                Assert.False(_db.JsonToggle(key, ".foo"));
-                Assert.True(_db.JsonToggle(key, ".foo"));
-            }
-        }
-
-        public class JsonClear : BaseIntegrationTest
-        {
-            [Fact]
-            public void CanExecute()
-            {
-                var key = Guid.NewGuid().ToString();
-
-                _db.JsonSet(key, "{\"foo\":[1,2,3,4]}");
-
-                Assert.Equal(1, _db.JsonClear(key, ".foo"));
-            }
-        }
     }
 }

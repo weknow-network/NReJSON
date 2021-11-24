@@ -10,7 +10,7 @@ The following blog post by Marc Gravell was the inspiration behind this: [StackE
 
 ## Installation
 
-`PM> Install-Package NReJSON -Version 3.0.0`
+`PM> Install-Package NReJSON -Version 4.0.0`
 
 ## Usage
 
@@ -30,6 +30,13 @@ If RedisJSON is installed you should see output similar to the following:
 ```
 
 (The version of the module installed on your server obviously may vary.)
+
+## Major changes in Version 4.0
+
+Removed deprecated RedisJson commands:
+
+ - JsonClear/JsonClearAsync
+ - JsonToggle/JsonToggleAsync
 
 ## Major Changes in Version 3.0
 
