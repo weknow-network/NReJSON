@@ -1740,6 +1740,161 @@ namespace NReJSON.Tests
             throw new NotImplementedException();
         }
 
+        public long HashStringLength(RedisKey key, RedisValue hashField, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RedisValue[] ListLeftPop(RedisKey key, long count, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public long ListLeftPush(RedisKey key, RedisValue[] values, When when = When.Always, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RedisValue[] ListRightPop(RedisKey key, long count, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public long ListRightPush(RedisKey key, RedisValue[] values, When when = When.Always, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SortedSetEntry? SortedSetPop(RedisKey key, Order order = Order.Ascending, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SortedSetEntry[] SortedSetPop(RedisKey key, long count, Order order = Order.Ascending, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool StreamCreateConsumerGroup(RedisKey key, RedisValue groupName, RedisValue? position = null, bool createStream = true, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public StreamEntry[] StreamReadGroup(RedisKey key, RedisValue groupName, RedisValue consumerName, RedisValue? position = null, int? count = null, bool noAck = false, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RedisStream[] StreamReadGroup(StreamPosition[] streamPositions, RedisValue groupName, RedisValue consumerName, int? countPerStream = null, bool noAck = false, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RedisValue StringGetDelete(RedisKey key, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RedisValue StringSetAndGet(RedisKey key, RedisValue value, TimeSpan? expiry = null, When when = When.Always, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool KeyTouch(RedisKey key, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public long KeyTouch(RedisKey[] keys, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<HashEntry> HashScanAsync(RedisKey key, RedisValue pattern = default, int pageSize = 250, long cursor = 0, int pageOffset = 0, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<long> HashStringLengthAsync(RedisKey key, RedisValue hashField, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<RedisValue[]> ListLeftPopAsync(RedisKey key, long count, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<long> ListLeftPushAsync(RedisKey key, RedisValue[] values, When when = When.Always, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<RedisValue[]> ListRightPopAsync(RedisKey key, long count, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<long> ListRightPushAsync(RedisKey key, RedisValue[] values, When when = When.Always, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<RedisValue> SetScanAsync(RedisKey key, RedisValue pattern = default, int pageSize = 250, long cursor = 0, int pageOffset = 0, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<SortedSetEntry> SortedSetScanAsync(RedisKey key, RedisValue pattern = default, int pageSize = 250, long cursor = 0, int pageOffset = 0, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<SortedSetEntry?> SortedSetPopAsync(RedisKey key, Order order = Order.Ascending, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<SortedSetEntry[]> SortedSetPopAsync(RedisKey key, long count, Order order = Order.Ascending, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> StreamCreateConsumerGroupAsync(RedisKey key, RedisValue groupName, RedisValue? position = null, bool createStream = true, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<StreamEntry[]> StreamReadGroupAsync(RedisKey key, RedisValue groupName, RedisValue consumerName, RedisValue? position = null, int? count = null, bool noAck = false, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<RedisStream[]> StreamReadGroupAsync(StreamPosition[] streamPositions, RedisValue groupName, RedisValue consumerName, int? countPerStream = null, bool noAck = false, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<RedisValue> StringGetDeleteAsync(RedisKey key, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<RedisValue> StringSetAndGetAsync(RedisKey key, RedisValue value, TimeSpan? expiry = null, When when = When.Always, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> KeyTouchAsync(RedisKey key, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<long> KeyTouchAsync(RedisKey[] keys, CommandFlags flags = CommandFlags.None)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

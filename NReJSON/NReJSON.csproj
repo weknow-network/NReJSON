@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net472;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Tom Hanks</Authors>
     <Company />
@@ -20,9 +20,7 @@
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="StackExchange.Redis" Version="2.*" />
-  </ItemGroup>
+
 
   <PropertyGroup>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
@@ -30,5 +28,9 @@
 
   <ItemGroup>
     <None Include="license\license.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StackExchange.Redis" Version="2.5.43" />
   </ItemGroup>
 </Project>
